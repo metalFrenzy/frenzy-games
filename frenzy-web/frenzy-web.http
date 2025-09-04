@@ -1,0 +1,6 @@
+@frenzy_web_HostAddress = http://localhost:5242
+
+GET {{frenzy_web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
