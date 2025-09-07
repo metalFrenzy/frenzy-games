@@ -30,6 +30,25 @@ namespace FrenzyWeb.Controllers.Game
             }
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<GameDto>> GetGame(string id)
+        {
+            try
+            {
+                var game = await _gameSerivce.GetGameById(id);
+                if (game == null)
+                {
+                    return NotFound();
+                }
+                return Ok(game);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+        }
+
+
         [HttpPost]
         public async Task<ActionResult<GameDto>> CreateGame([FromBody] CreateGameDto createGameDto)
         {
@@ -38,7 +57,7 @@ namespace FrenzyWeb.Controllers.Game
                 var game = await _gameSerivce.CreateGame(createGameDto);
                 return Ok(game);
 
-                }
+            }
             catch (Exception e)
             {
                 return StatusCode(500, e.Message);
