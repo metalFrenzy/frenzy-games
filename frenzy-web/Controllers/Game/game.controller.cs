@@ -55,7 +55,7 @@ namespace FrenzyWeb.Controllers.Game
             try
             {
                 var game = await _gameSerivce.CreateGame(createGameDto);
-                return Ok(game);
+                return CreatedAtAction(nameof(GetGame), new { id = game.Id, }, game);
 
             }
             catch (Exception e)
