@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FrenzyWeb.Controllers.Game
 {
     [ApiController]
-    [Route("api/[controllers]")]
+    [Route("api/[controller]")]
     public class GameController : ControllerBase
     {
         private readonly GameService _gameSerivce;
