@@ -30,9 +30,25 @@ namespace FrenzyWeb.Controllers.Game
             }
         }
 
+        [HttpPost]
+        public async Task<ActionResult<GameDto>> CreateGame([FromBody] CreateGameDto createGameDto)
+        {
+            try
+            {
+                var game = await _gameSerivce.CreateGame(createGameDto);
+                return Ok(game);
 
+                }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+        }
     }
 
 
 }
+
+
+
 
