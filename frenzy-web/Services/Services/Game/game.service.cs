@@ -12,6 +12,52 @@ namespace FrenzyWeb.Services.Services
             _mongoDBService = mongoDBService;
         }
 
+
+        public async Task<GameDto> CreateGameAsync(CreateGameDto createGameDto)
+        {
+            // Manual validation
+            if (string.IsNullOrWhiteSpace(createGameDto.Name))
+                throw new ArgumentException("Name is required and cannot be empty");
+
+            if (createGameDto.Name.Length < 2 || createGameDto.Name.Length > 100)
+                throw new ArgumentException("Name must be between 2 and 100 characters");
+
+            if (createGameDto.Price <= 0)
+                throw new ArgumentException("Price must be greater than 0");
+
+            if (string.IsNullOrWhiteSpace(createGameDto.Platform))
+                throw new ArgumentException("Platform is required");
+
+            var validPlatforms = new[] { "PS4", "PS5", "Xbox"};
+            if (!validPlatforms.Contains(createGameDto.Platform))
+                throw new ArgumentException("Platform must be PS4, PS5, Xbox");
+
+            if (string.IsNullOrWhiteSpace(createGameDto.CoverImage))
+                throw new ArgumentException("Cover image URL is required");
+
+            // Validation passed, create the game
+            var game = new Game
+            {
+                Name = createGameDto.Name,
+                Price = createGameDto.Price,
+                Platform = createGameDto.Platform,
+                CoverImage = createGameDto.CoverImage,
+                CreatedAt = DateTime.UtcNow
+            };
+
+            await _mongoDBService.Games.InsertOneAsync(game);
+
+            return new GameDto
+            {
+                Id = game.Id,
+                Name = game.Name,
+                Price = game.Price,
+                Platform = game.Platform,
+                CoverImage = game.CoverImage,
+                CreatedAt = game.CreatedAt
+            };
+        }
+
         public async Task<List<GameDto>> GetAllGames()
         {
             var games = await _mongoDBService.Games.Find(_ => true).ToListAsync();
