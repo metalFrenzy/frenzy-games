@@ -63,6 +63,23 @@ namespace FrenzyWeb.Controllers.Game
                 return StatusCode(500, e.Message);
             }
         }
+
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteGame(string id)
+        {
+            try
+            {
+                var isDeleted = await _gameSerivce.DeleteGame(id);
+                if (!isDeleted) return NotFound();
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+        }
+
     }
 
 
