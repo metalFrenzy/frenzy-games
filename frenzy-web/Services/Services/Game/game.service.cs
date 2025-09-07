@@ -13,7 +13,7 @@ namespace FrenzyWeb.Services.Services
         }
 
 
-        public async Task<GameDto> CreateGameAsync(CreateGameDto createGameDto)
+        public async Task<GameDto> CreateGame(CreateGameDto createGameDto)
         {
             // Manual validation
             if (string.IsNullOrWhiteSpace(createGameDto.Name))
