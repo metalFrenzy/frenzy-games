@@ -75,7 +75,7 @@ namespace FrenzyWeb.Controllers.Game
                 return NoContent();
             }
             catch (Exception e)
-            {
+            {   
                 return StatusCode(500, e.Message);
             }
         }
