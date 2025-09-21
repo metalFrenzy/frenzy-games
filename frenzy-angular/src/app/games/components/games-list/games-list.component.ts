@@ -9,18 +9,31 @@ import { GameDto } from 'src/app/models/game.models';
   styleUrls: ['./games-list.component.scss']
 })
 export class GamesListComponent implements OnInit {
-  games: Observable<GameDto[]> | undefined;
+  games: GameDto[] = [];
+  isloading: boolean = false;
+  error: string | null = null;
   ngOnInit(): void {
-    this.games = this.getGames();
-    console.log(this.games)
+    this.getGames();
   }
 
   constructor(private gameService: GameService) {
 
   }
 
-  getGames(): Observable<GameDto[]> {
-    return this.gameService.getGames();
+  getGames(): void {
+    this.isloading = true;
+    this.gameService.getGames().subscribe({
+      next: (games) => {
+        this.games = games;
+        this.isloading = false;
+        console.log(games);
+      },
+      error: (err) => {
+        this.error = err;
+        this.isloading = false;
+        console.log(err)
+      }
+    })
   }
 
 }
