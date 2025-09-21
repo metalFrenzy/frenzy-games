@@ -14,6 +14,11 @@ import { CreateGameComponent } from './components/create-game/create-game.compon
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    GamesListComponent,
+    GameDetailComponent,
+    CreateGameComponent
   ]
 })
 export class GamesModule { }
