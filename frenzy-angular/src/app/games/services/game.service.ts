@@ -9,7 +9,7 @@ import { CreateGameDto, GameDto, UpdateGameDto } from 'src/app/models/game.model
   providedIn: 'root'
 })
 export class GameService {
-  private baseUrl = `${environment.apiUrl}/api/games`;
+  private baseUrl = `${environment.apiUrl}/api/game`;
   constructor(private http: HttpClient) { }
 
   getGames(): Observable<GameDto[]> {
