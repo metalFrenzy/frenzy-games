@@ -1,0 +1,312 @@
+/* home.component.scss - Dark Fire Gaming Theme */
+
+.home-container {
+    width: 100%;
+    background: transparent;
+    overflow-x: hidden;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80vh;
+    padding: 2rem;
+    position: relative;
+
+    // Fire gradient background
+    background: linear-gradient(135deg, #0d0d0d 0%, #1f0f0f 50%, #2f1a00 100%);
+
+    // Animated fire particles background
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image:
+            radial-gradient(2px 2px at 20px 30px, rgba(255, 69, 0, 0.3), transparent),
+            radial-gradient(3px 3px at 40px 70px, rgba(255, 107, 53, 0.2), transparent),
+            radial-gradient(1px 1px at 90px 40px, rgba(255, 165, 0, 0.4), transparent),
+            radial-gradient(2px 2px at 130px 20px, rgba(255, 69, 0, 0.2), transparent);
+        background-size: 300px 300px;
+        animation: fireParticles 8s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    // Content above particles
+    .hero-content,
+    .hero-image {
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-content {
+        flex: 1;
+        max-width: 600px;
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #ff4500, #ff6b35, #ffa500, #ff4500);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fireText 3s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(255, 69, 0, 0.5);
+            line-height: 1.1;
+        }
+
+        p {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            color: #e0e0e0;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            max-width: 500px;
+        }
+
+        .cta-button {
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background: linear-gradient(45deg, #ff4500, #ff6b35, #ffa500);
+            background-size: 300% 300%;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            box-shadow:
+                0 8px 25px rgba(255, 69, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                transition: left 0.5s;
+            }
+
+            &:hover {
+                background-position: 100% 0;
+                transform: translateY(-3px) scale(1.05);
+                box-shadow:
+                    0 15px 35px rgba(255, 69, 0, 0.6),
+                    0 0 40px rgba(255, 165, 0, 0.8);
+                animation: buttonPulse 1.5s infinite;
+
+                &::before {
+                    left: 100%;
+                }
+            }
+
+            &:active {
+                transform: translateY(-1px) scale(1.02);
+            }
+        }
+    }
+
+    .hero-image {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 400px;
+        position: relative;
+
+        // Gaming controller or console illustration placeholder
+        &::after {
+            content: '🎮';
+            font-size: clamp(8rem, 15vw, 15rem);
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(255, 69, 0, 0.3));
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+        min-height: 70vh;
+
+        .hero-content {
+            margin-bottom: 2rem;
+            max-width: none;
+
+            h1 {
+                margin-bottom: 1rem;
+            }
+
+            p {
+                max-width: none;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .hero-image {
+            min-height: 200px;
+
+            &::after {
+                font-size: 6rem;
+            }
+        }
+    }
+}
+
+.games-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(180deg, transparent 0%, rgba(255, 69, 0, 0.05) 100%);
+    position: relative;
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100px;
+                height: 4px;
+                background: linear-gradient(45deg, #ff4500, #ffa500);
+                border-radius: 2px;
+            }
+        }
+
+        p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 4rem 1.5rem;
+    }
+}
+
+.features-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(145deg, #1f1f1f 0%, #2f2f2f 100%);
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(45deg, #ff4500, #ffa500, #ff4500);
+    }
+
+    h2 {
+        text-align: center;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 700;
+        margin-bottom: 3rem;
+        color: #ffffff;
+        background: linear-gradient(45deg, #ff4500, #ffa500);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    @media (max-width: 768px) {
+        padding: 4rem 1.5rem;
+    }
+}
+
+// Animations
+@keyframes fireParticles {
+
+    0%,
+    100% {
+        background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+        opacity: 1;
+    }
+
+    25% {
+        background-position: 100% 100%, 0% 0%, 50% 50%, 100% 0%;
+        opacity: 0.8;
+    }
+
+    50% {
+        background-position: 100% 0%, 100% 100%, 0% 50%, 50% 100%;
+        opacity: 0.6;
+    }
+
+    75% {
+        background-position: 0% 100%, 50% 0%, 100% 0%, 0% 50%;
+        opacity: 0.8;
+    }
+}
+
+@keyframes fireText {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+        filter: brightness(1) saturate(1);
+    }
+
+    50% {
+        background-position: 100% 50%;
+        filter: brightness(1.2) saturate(1.1);
+    }
+}
+
+@keyframes buttonPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 15px 35px rgba(255, 69, 0, 0.6),
+            0 0 40px rgba(255, 165, 0, 0.8);
+    }
+
+    50% {
+        box-shadow:
+            0 15px 35px rgba(255, 69, 0, 0.4),
+            0 0 60px rgba(255, 165, 0, 1);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    33% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+
+    66% {
+        transform: translateY(5px) rotate(-1deg);
+    }
+}
