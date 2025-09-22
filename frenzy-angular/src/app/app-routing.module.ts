@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GamesListComponent } from './games/components/games-list/games-list.component';
+import { HomeComponent } from './games/components/home/home.component';
 
 const routes: Routes = [
   {
     path: '', redirectTo: '/games', pathMatch: 'full'
   },
   {
-    path: 'games', component: GamesListComponent
+    path: 'games', component: HomeComponent
   },
 ];
 

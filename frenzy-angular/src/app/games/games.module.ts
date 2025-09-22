@@ -20,7 +20,8 @@ import { HomeComponent } from './components/home/home.component';
   exports: [
     GamesListComponent,
     GameDetailComponent,
-    CreateGameComponent
+    CreateGameComponent,
+    HomeComponent,
   ]
 })
 export class GamesModule { }
