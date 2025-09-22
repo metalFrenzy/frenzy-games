@@ -1,1 +1,125 @@
-/* You can add global styles to this file, and also import other style files */
+/* Neon Purple/Pink Gaming Theme */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    // Dark Backgrounds
+    --bg-primary: #0d0d0d; // Pure black
+    --bg-secondary: #1a1a1a; // Dark gray
+    --bg-tertiary: #2a2a2a; // Card backgrounds
+    --bg-hover: #333333; // Hover states
+
+    // Neon Purple/Pink Accents
+    --accent-primary: #ff0080; // Hot pink
+    --accent-secondary: #8000ff; // Electric purple  
+    --accent-tertiary: #ff00ff; // Magenta
+    --accent-success: #00ff88; // Neon green
+    --accent-warning: #ffaa00; // Orange
+    --accent-danger: #ff3333; // Red
+
+    // Text Colors
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-muted: #888888;
+    --text-accent: #ff0080;
+
+    // Borders & Effects
+    --border-color: #444444;
+    --glow-pink: 0 0 20px rgba(255, 0, 128, 0.5);
+    --glow-purple: 0 0 20px rgba(128, 0, 255, 0.5);
+    --glow-magenta: 0 0 30px rgba(255, 0, 255, 0.6);
+
+    // Gradients
+    --gradient-primary: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+    --gradient-neon: linear-gradient(45deg, #ff0080, #8000ff, #ff00ff);
+    --gradient-card: linear-gradient(145deg, #2a2a2a 0%, #333333 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--gradient-primary) !important;
+    color: var(--text-primary);
+    min-height: 100vh;
+
+    // Animated background particles effect
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, #ff008050, transparent),
+        radial-gradient(2px 2px at 40px 70px, #8000ff50, transparent),
+        radial-gradient(1px 1px at 90px 40px, #ff00ff50, transparent);
+    background-size: 200px 200px;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 700;
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: var(--glow-pink);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.2);
+    }
+}
+
+.btn-primary {
+    background: var(--gradient-neon);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--glow-pink);
+
+    &:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: var(--glow-magenta);
+    }
+}
+
+.card {
+    background: var(--gradient-card);
+    border: 1px solid var(--accent-primary);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: var(--glow-pink);
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--glow-magenta);
+        border-color: var(--accent-tertiary);
+    }
+}
