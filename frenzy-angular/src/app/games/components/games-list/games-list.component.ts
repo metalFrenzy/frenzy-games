@@ -36,4 +36,8 @@ export class GamesListComponent implements OnInit {
     })
   }
 
+  goToDetails(): void {
+    console.log("clcococjccjcjjc")
+  }
+
 }
