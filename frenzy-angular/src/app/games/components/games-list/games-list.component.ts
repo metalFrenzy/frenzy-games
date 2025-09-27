@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GameService } from '../../services/game.service';
 import { Observable } from 'rxjs';
 import { GameDto } from 'src/app/models/game.models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-games-list',
@@ -16,7 +17,7 @@ export class GamesListComponent implements OnInit {
     this.getGames();
   }
 
-  constructor(private gameService: GameService) {
+  constructor(private gameService: GameService, private router: Router,) {
 
   }
 
@@ -36,8 +37,7 @@ export class GamesListComponent implements OnInit {
     })
   }
 
-  goToDetails(): void {
-    console.log("clcococjccjcjjc")
+  navigateToGameDetails(gameId: string): void {
+    this.router.navigateByUrl(`/game-details/${gameId}`);
   }
-
 }

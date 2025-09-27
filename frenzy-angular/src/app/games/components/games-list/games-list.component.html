@@ -4,5 +4,6 @@
     <h3>{{ game.name }}</h3>
     <p>{{ game.platform }}</p>
     <p>{{ game.price }}</p>
+    <button (click)="this.navigateToGameDetails(game.id!)">View Details</button>
   </div>
 </div>
