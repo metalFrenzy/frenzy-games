@@ -1,12 +1,4 @@
 /* home.component.scss - Dark Fire Gaming Theme */
-.games-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
-    background: #1e1e1e;
-}
-
 .home-container {
     width: 100%;
     background: transparent;
