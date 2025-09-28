@@ -23,5 +23,8 @@ namespace FrenzyWeb.Models.Game
 
         [BsonElement("createdAt")]
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        [BsonElement("description")]
+        public required string Description { get; set; }
     }
 }
