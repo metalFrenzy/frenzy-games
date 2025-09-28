@@ -5,6 +5,7 @@ export interface GameDto {
   platform: string;
   coverImage: string;
   createdAt?: Date;
+  description: string;
 }
 
 export interface CreateGameDto {
@@ -12,6 +13,7 @@ export interface CreateGameDto {
   price: number;
   platform: string;
   coverImage: string;
+  description: string;
 }
 
 export interface UpdateGameDto {
@@ -19,4 +21,5 @@ export interface UpdateGameDto {
   price?: number;
   platform?: string;
   coverImage?: string;
+  description?: string;
 }
