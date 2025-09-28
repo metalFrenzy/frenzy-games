@@ -8,6 +8,7 @@ namespace FrenzyWeb.Dto.Game
         public required string Platform { get; set; }
         public required string CoverImage { get; set; }
         public DateTime CreatedAt { get; set; }
+        public required string Description { get; set; }
     }
 
     public class CreateGameDto
@@ -16,6 +17,7 @@ namespace FrenzyWeb.Dto.Game
         public decimal Price { get; set; }
         public required string Platform { get; set; }
         public required string CoverImage { get; set; }
+        public required string Description { get; set; }
     }
 
     public class UpdateGameDto
@@ -24,5 +26,6 @@ namespace FrenzyWeb.Dto.Game
         public decimal? Price { get; set; }
         public string? Platform { get; set; }
         public string? CoverImage { get; set; }
+        public  string? Description { get; set; }
     }
 }
