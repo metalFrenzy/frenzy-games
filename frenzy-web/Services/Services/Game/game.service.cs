@@ -42,7 +42,8 @@ namespace FrenzyWeb.Services.Services
                 Price = createGameDto.Price,
                 Platform = createGameDto.Platform,
                 CoverImage = createGameDto.CoverImage,
-                CreatedAt = DateTime.UtcNow
+                CreatedAt = DateTime.UtcNow,
+                Description = createGameDto.Description
             };
 
             await _mongoDBService.Games.InsertOneAsync(game);
@@ -54,7 +55,8 @@ namespace FrenzyWeb.Services.Services
                 Price = game.Price,
                 Platform = game.Platform,
                 CoverImage = game.CoverImage,
-                CreatedAt = game.CreatedAt
+                CreatedAt = game.CreatedAt,
+                Description = game.Description
             };
         }
 
@@ -68,7 +70,8 @@ namespace FrenzyWeb.Services.Services
                 Price = game.Price,
                 Platform = game.Platform,
                 CoverImage = game.CoverImage,
-                CreatedAt = game.CreatedAt
+                CreatedAt = game.CreatedAt,
+                Description = game.Description
             }).ToList();
         }
 
@@ -83,7 +86,8 @@ namespace FrenzyWeb.Services.Services
                 Price = game.Price,
                 Platform = game.Platform,
                 CoverImage = game.CoverImage,
-                CreatedAt = game.CreatedAt
+                CreatedAt = game.CreatedAt,
+                Description = game.Description
             };
         }
 
@@ -120,7 +124,8 @@ namespace FrenzyWeb.Services.Services
                 Price = result.Price,
                 Platform = result.Platform,
                 CoverImage = result.CoverImage,
-                CreatedAt = result.CreatedAt
+                CreatedAt = result.CreatedAt,
+                Description = result.Description
             };
 
         }
