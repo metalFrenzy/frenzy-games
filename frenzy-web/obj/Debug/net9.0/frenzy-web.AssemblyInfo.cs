@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("frenzy-web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+487d2cd3d8a61f81906e76f0ee2fe41f3a0e75f1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+16fdcf2e25ceb80f5649d0f9feec4b7bf0a9ec9e")]
 [assembly: System.Reflection.AssemblyProductAttribute("frenzy-web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("frenzy-web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
