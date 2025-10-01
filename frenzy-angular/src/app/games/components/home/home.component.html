@@ -5,7 +5,9 @@
     <div class="hero-content">
       <h1>Welcome to Frenzy Games</h1>
       <p>Discover the best games for PS4, PS5, Xbox and PC</p>
-      <button class="cta-button">Explore Games</button>
+      <button class="cta-button" (click)="this.goToGame()">
+        Explore Games
+      </button>
     </div>
     <div class="hero-image">
       <!-- Background image or illustration -->
@@ -19,10 +21,7 @@
       <p>Check out our latest collection</p>
     </div>
 
-  
-
-       <app-games-list></app-games-list>
- 
+    <app-games-list></app-games-list>
   </section>
 
   <!-- Other sections you might want -->
