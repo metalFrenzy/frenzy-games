@@ -1,13 +1,17 @@
 <h2>Add new Game</h2>
 
-<form action="">
+<form [formGroup]="gameForm" (ngSubmit)="onSubmit()">
   <p>Game Title</p>
-  <input type="text" placeholder="Skyrim" />
+  <input type="text" placeholder="Skyrim" formControlName="name" />
   <p>Price</p>
-  <input type="number" placeholder="65.5" />
+  <input type="number" placeholder="65.5" formControlName="price" />
   <p>Platform</p>
-  <input type="number" placeholder="PS5" />
+  <input type="text" placeholder="PS5" formControlName="platform" />
   <p>Description</p>
-  <input type="text" placeholder="explore the open world" />
-    <button type="submit">Add Game</button>
+  <input
+    type="text"
+    placeholder="explore the open world"
+    formControlName="description"
+  />
+  <button type="submit">Add Game</button>
 </form>
