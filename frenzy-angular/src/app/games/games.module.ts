@@ -4,6 +4,7 @@ import { GamesListComponent } from './components/games-list/games-list.component
 import { GameDetailComponent } from './components/game-detail/game-detail.component';
 import { CreateGameComponent } from './components/create-game/create-game.component';
 import { HomeComponent } from './components/home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,10 +13,11 @@ import { HomeComponent } from './components/home/home.component';
     GamesListComponent,
     GameDetailComponent,
     CreateGameComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
   ],
   exports: [
     GamesListComponent,
