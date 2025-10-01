@@ -21,5 +21,9 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  navigateToCreateGame() {
+    this.router.navigate(['/add-game']);
+  }
+
 
 }
