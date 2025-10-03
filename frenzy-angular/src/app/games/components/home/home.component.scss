@@ -266,6 +266,39 @@
     }
 }
 
+
+.feature-card {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        border-color: #ff4500;
+        box-shadow: 0 10px 30px rgba(255, 69, 0, 0.3); // Add the full rgba values
+    }
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
 // Animations
 @keyframes fireParticles {
 
