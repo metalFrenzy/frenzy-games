@@ -21,3 +21,33 @@ Full-stack monorepo application for browsing, viewing details, and managing vide
 - **RxJS** (Reactive programming)
 - **Angular Router** (Navigation)
 - **Reactive Forms** (Form handling)
+
+## 🚀 Features
+
+### Backend Features
+- **CRUD Operations** for games
+- **MongoDB Integration** with efficient queries
+- **DTO Pattern** for data transfer
+- **Service Layer Architecture** for business logic
+- **CORS Configuration** for Angular frontend
+- **Error Handling** with proper HTTP status codes
+
+### Frontend Features
+- **Responsive Game Cards** with hover effects
+- **Game Details Page** with routing
+- **Create Game Form** with reactive forms validation
+- **Smooth Animations** and transitions
+- **Landing Page** with hero section
+- **Features Section** showcasing benefits
+- **Dark Fire Theme** with orange/red accent colors
+
+## 🎨 Design Features
+
+- **Dark Gaming Theme** with fire gradient accents
+- **Custom Color Palette** (dark backgrounds with orange/red highlights)
+- **Poppins Font** from Google Fonts
+- **Smooth Hover Effects** on cards and buttons
+- **Responsive Grid Layout** for game cards
+- **Custom Scrollbar** styling
+- **Gradient Text Effects** on headings
+
